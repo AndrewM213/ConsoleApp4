@@ -10,7 +10,7 @@ namespace ConsoleApp4
     class cola
     {
         nodo Primero { get; set; }
-        public void AGREGAR_ULTIMO(string cadena)
+        public void enqueue(string cadena)
         {         
             nodo nuevo = new nodo(cadena);
             if (this.Primero == null)
@@ -27,7 +27,7 @@ namespace ConsoleApp4
                 temp.sig = nuevo;
             }
         }
-        public void ELIMINAR_PRIMERO()
+        public void dequeue()
         {
             if (this.Primero == null)
             {
@@ -37,6 +37,54 @@ namespace ConsoleApp4
             else
             {
                 this.Primero = Primero.sig;
+            }
+        }
+        public string front()
+        {
+            string primer = "";
+            
+            if (this.Primero == null)
+            {
+                Console.WriteLine("no existen valores");
+                
+            }
+            else
+            {
+                nodo tmp = this.Primero;
+                primer = tmp.Dato;
+
+            }
+            return primer;
+        }
+        public int Size()
+        {
+            if (this.Primero == null)
+            {
+                return 0;
+            }
+            else
+            {
+                int cont = 0;
+                nodo tmp = this.Primero;
+                while(tmp != null)
+                {
+                    cont++;
+                    tmp = tmp.sig; 
+                }
+                return cont;
+            }
+        }
+        public bool empty()
+        {
+            if (this.Primero == null)
+            {
+                Console.WriteLine("la cola esta vacia");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("existen datos");
+                return false;
             }
         }
         public override string ToString()
