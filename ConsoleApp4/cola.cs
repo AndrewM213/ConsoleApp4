@@ -34,6 +34,10 @@ namespace ConsoleApp4
                 Console.WriteLine("no hay elementos en la cola");
                
             }
+            else if(this.Primero.sig == null)
+            {
+                this.Primero = null;
+            }
             else
             {
                 this.Primero = Primero.sig;

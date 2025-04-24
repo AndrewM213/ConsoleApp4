@@ -1,8 +1,8 @@
 ﻿using ConsoleApp4;
 cola X = new cola();
 X.enqueue("pera");
-X.enqueue("manzana");
-X.enqueue("sandia");
+//X.enqueue("manzana");
+//X.enqueue("sandia");
 X.dequeue();
 
 Console.WriteLine(X.ToString());
